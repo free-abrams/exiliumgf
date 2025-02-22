@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: "${{ github.repository }}_bbs"
+  DOCKER_REPO: alex78218/exiliumgf_bbs  # 固定仓库地址"
 
 jobs:
   build-and-push:
@@ -26,7 +26,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: alex78218/${{env.IMAGE_NAME}}
+          images: ${{env.DOCKER_REPO}}
           tags: |
             type=raw,value=latest
             type=ref,event=tag
