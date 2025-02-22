@@ -2,8 +2,6 @@ name: Docker Build & Publish
 
 on:
   push:
-    # 触发条件1：推送到 main 分支时构建 latest 镜像
-    branches: [ "main" ]
     # 触发条件2：推送标签时构建版本镜像
     tags: [ "v*.*.*" ]
 
