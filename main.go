@@ -27,6 +27,7 @@ func main() {
 	var c Config
 	file, err := os.ReadFile(*configFile)
 	if err != nil {
+		panic(fmt.Errorf("读取配置文件失败: %v", err))
 		return
 	}
 	err = json.Unmarshal(file, &c)
