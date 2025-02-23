@@ -22,8 +22,8 @@ FROM scratch
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=builder /usr/share/zoneinfo/Asia/Shanghai /usr/share/zoneinfo/Asia/Shanghai
 ENV TZ Asia/Shanghai
-
-VOLUME ["config.json", "/app/config.json"]
+COPY config.json.example /app/config.json
+VOLUME ["config.json.example", "/app/config.json"]
 
 WORKDIR /app
 COPY --from=builder /app/exiliumgf /app/exiliumgf
