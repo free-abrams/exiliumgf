@@ -23,9 +23,6 @@ COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certifi
 COPY --from=builder /usr/share/zoneinfo/Asia/Shanghai /usr/share/zoneinfo/Asia/Shanghai
 ENV TZ Asia/Shanghai
 
-# 声明挂载点（非必须，但推荐）
-VOLUME ["/app/config.json"]
-
 WORKDIR /app
 COPY --from=builder /app/exiliumgf /app/exiliumgf
 
