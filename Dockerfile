@@ -23,8 +23,6 @@ COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certifi
 COPY --from=builder /usr/share/zoneinfo/Asia/Shanghai /usr/share/zoneinfo/Asia/Shanghai
 ENV TZ Asia/Shanghai
 
-# 添加默认配置文件到镜像
-COPY config.json.example /app/config.json
 # 声明挂载点（非必须，但推荐）
 VOLUME ["/app/config.json"]
 
