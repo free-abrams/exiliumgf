@@ -1,0 +1,10 @@
+# docker-compose.yml
+name: exiliumgf_bbs
+
+services:
+  app:
+    container_name: exiliumgf
+    image: alex78218/exiliumgf_bbs:latest
+    volumes:
+      - ./config.json:/app/config.json
+    restart: unless-stopped
